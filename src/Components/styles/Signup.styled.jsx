@@ -20,6 +20,8 @@ transform: rotate(${props => props.boxAngle || "45deg"});
 z-index: ${props => props.boxIndex || '1' };
 `;
 
+
+
 export const Boxwrapper = styled.div`
 position: absolute;
 width: 455px;
@@ -32,17 +34,20 @@ z-index: 2;
 `;
 
 export const Title = styled.h1 `
+font-family: 'Karla';
 font-size: 36px;
 font-weight: 700;
 text-align: center;
 color: #212B27;
+margin-top:30px;
 `;
 
 export const Paragraph = styled.p `
-font-size: 15px;
+font-size: 16px;
 font-weight: 400;
 text-align: center;
 color: #32403B;
+font-family: 'Karla';
 `
 export const Inputs = styled.input`
 width: 375px;
@@ -51,6 +56,10 @@ border-radius: 10px;
 border: 1px solid #0000001A;
 margin-top:20px;
 margin-left:40px;
+font-family: 'Karla';
+font-weight: 100;
+font-size:17px;
+text-indent: 20px;
 `
 export const Button = styled.button `
 width: 255px;
@@ -59,13 +68,31 @@ top: 384px;
 left: 273px;
 border-radius: 15px;
 background: #84C7AE;
-font-size: 22px;
-font-weight: 600;
+font-size: 23px;
+font-weight: 550;
 text-align: center;
 color: #FFFFFF;
 border: none;
 margin-top:25px;
 margin-left:90px;
+transition: background-color 0.3s, box-shadow 0.3s;
+  
+&:active {
+  background-color: #347474;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.6s;
+}
+`; 
+export const Sign = styled.p `
+font-family: Karla;
+font-size: 14px;
+font-weight: 400;
+line-height: 18px;
+letter-spacing: 0em;
+text-align: center;
+color:#32403B;
+margin-right:22px;
+
 `
 
 

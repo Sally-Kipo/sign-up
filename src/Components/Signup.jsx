@@ -1,8 +1,6 @@
 import './Fonts/fonts.css';
 import React, { useState } from "react";
-import { Container, Box, Boxwrapper, Title, Paragraph, Inputs, Button } from "./styles/Signup.styled";
-
-
+import { Container, Box, Boxwrapper, Title, Paragraph, Inputs, Button, Sign,  } from "./styles/Signup.styled";
 
 
 const Signup = () => {
@@ -13,7 +11,14 @@ const [password , setPassword] = useState ("");
 const handleCreate = () => {
     if(email.trim().length === 0 || password.trim().length === 0)
         return alert('შეავსე ყველა ველი')
+    if (email.length < 6 || password.length < 6) {
+      return alert('მინიმუმ 6 სიმბოლო')
+    }
+    alert('შენ წარმატებით გაიარე რეგისტრაცია')
 }
+const handleSignIn = () => {
+  alert('მაგდენი ჯერ არ ვიცი');
+};
 
 const boxProps1 = {
     boxPosition: 'absolute',
@@ -53,7 +58,8 @@ const boxProps1 = {
             <Inputs placeholder="Password" onChange={event => {
                           return setPassword(event.target.value);
                       }}></Inputs>
-            <Button>Create Account</Button>
+            <Button onClick={handleCreate}>Create Account</Button>
+            <Sign>Already Have An Account? <span onClick={handleSignIn} style={{ textDecoration: 'underline', cursor: 'pointer' }}>Sign In</span></Sign>
       </Boxwrapper>
       </Container>
     </>
